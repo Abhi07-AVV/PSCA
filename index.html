@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Twin Detector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Proposal Twin Detector</h1>
+            <p>Check if your research proposal is too similar to existing ones</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>Upload New Proposal</h2>
+                <div class="upload-area" id="uploadArea">
+                    <p>Drag & drop your PDF file here or <span class="browse-link" id="browseLink">browse files</span></p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                </div>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <span id="fileName"></span>
+                    <button id="removeFile">×</button>
+                </div>
+            </section>
+
+            <section class="dataset-section">
+                <h2>Dataset Information</h2>
+                <div class="dataset-info">
+                    <p>Comparing against <span id="datasetCount">0</span> existing proposals</p>
+                    <button id="refreshDataset">Refresh Dataset</button>
+                </div>
+            </section>
+
+            <section class="analysis-section">
+                <button id="analyzeButton" class="analyze-btn" disabled>Analyze Proposal</button>
+                <div class="progress-bar" id="progressBar" style="display: none;">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div class="summary-card">
+                    <div class="score-display">
+                        <span class="score-label">Overall Similarity</span>
+                        <span class="score-value" id="overallScore">0%</span>
+                    </div>
+                    <div class="recommendation" id="recommendation">
+                        No recommendation
+                    </div>
+                </div>
+
+                <div class="matches-section">
+                    <h3>Top Matches</h3>
+                    <div class="matches-list" id="matchesList">
+                        <!-- Matches will be populated here -->
+                    </div>
+                </div>
+
+                <div class="export-section">
+                    <button id="exportHtmlBtn" class="export-btn">Export HTML Report</button>
+                    <button id="exportPdfBtn" class="export-btn">Export PDF Report</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Proposal Twin Detector &copy; 2025 - Ensuring research proposal uniqueness</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
