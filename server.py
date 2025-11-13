@@ -180,15 +180,12 @@ class ProposalCheckerHandler(BaseHTTPRequestHandler):
             raise e
 
 def start_server():
-    # Start the server
-    server_address = ('', 8000)
+    port = int(os.environ.get("PORT", 8000))  # ✅ Render sets PORT automatically
+    server_address = ('', port)
     httpd = HTTPServer(server_address, ProposalCheckerHandler)
-    print("Starting server on http://localhost:8000")
-    print("Press Ctrl+C to stop the server")
+    print(f"Server running on port {port}")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\nServer stopped.")
-
-if __name__ == "__main__":
-    start_server()
+        print("Server stopped.")
+        
