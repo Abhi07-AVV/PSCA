@@ -189,3 +189,6 @@ def start_server():
     except KeyboardInterrupt:
         print("Server stopped.")
         
+
+if __name__ == "__main__":
+    start_server()
